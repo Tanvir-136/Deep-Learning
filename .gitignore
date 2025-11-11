@@ -1,1 +1,32 @@
-.vscode
+# === Virtual Environments ===
+# This is the MOST important line for you.
+# It prevents your entire TensorFlow library from being uploaded.
+/my_env/
+/venv/
+/.venv/
+
+# === Python Cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === IDE / Editor Files ===
+.vscode/
+.idea/
+
+# === OS-specific Files ===
+.DS_Store
+Thumbs.db
+
+# === Secrets ===
+# Never commit files with passwords or API keys
+*.env
+*.ini
+
+# === Deep Learning Files (Optional) ===
+# Ignores large datasets and trained models
+*.csv
+*.h5
+*.pb
+*.data
