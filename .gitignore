@@ -24,9 +24,42 @@ Thumbs.db
 *.env
 *.ini
 
-# === Deep Learning Files (Optional) ===
-# Ignores large datasets and trained models
+# === Jupyter / Notebook ===
+.ipynb_checkpoints/
+*.ipynb
+
+# === Deep Learning Files / Large artifacts ===
+# Ignore common dataset, model and checkpoint files/folders
+/data/
+/datasets/
+/datasets/*
+/models/
+/checkpoints/
+/trained_models/
+/logs/
 *.csv
 *.h5
 *.pb
 *.data
+*.onnx
+*.tflite
+*.pt
+*.pth
+*.ckpt
+*.ckpt.index
+*.ckpt.meta
+*.tar
+*.tar.gz
+*.npz
+*.npy
+
+# === Misc ===
+# Keep build artifacts and packaging out
+dist/
+build/
+*.egg-info/
+
+# NOTE: .gitignore only prevents new files from being tracked.
+# If large files were already committed, untrack them with:
+#   git rm -r --cached <path>
+# then commit the removal.
