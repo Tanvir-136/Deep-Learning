@@ -98,3 +98,36 @@ else:
 # =========================
 # new_X_scaled = scaler.transform(new_X)
 # predictions = model.predict(new_X_scaled)
+
+
+# Add XOR dataset example and modern ANN model implementation
+import numpy as np
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input
+
+# XOR dataset
+X = np.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+])
+y = np.array([0, 1, 1, 0])
+
+# Build ANN model (modern style)
+model = Sequential([
+    Input(shape=(2,)),
+    Dense(4, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+
+# Compile
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train
+model.fit(X, y, epochs=5000, verbose=0)  # Increase epochs for XOR
+
+# Predict
+predictions = model.predict(X)
+print("Predictions:")
+print(predictions)
